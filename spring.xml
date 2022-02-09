@@ -7,28 +7,54 @@
         <constructor-arg index="1" value="10"/>
     </bean>
 
-    <bean id="pointTriangle" class="org.springApp.PointTriangle">
+    <bean id="pointA" class="org.springApp.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
+    </bean>
+    <bean id="pointB" class="org.springApp.Point">
+        <property name="x" value="20"/>
+        <property name="y" value="0"/>
+    </bean>
+
+    <!--<bean id="pointTriangle" class="org.springApp.PointTriangle">
         <property name="pointA" ref="aPoint"/>
-<!--        inner bean-->
+        &lt;!&ndash;        inner bean&ndash;&gt;
         <property name="pointB">
             <bean class="org.springApp.Point">
                 <property name="x" value="-20"/>
                 <property name="y" value="0"/>
             </bean>
         </property>
-        <property name="pointC" >
-            <idref bean="cPoint" />
-        </property>
-    </bean>
-
-    <bean id="aPoint" class="org.springApp.Point">
+        &lt;!&ndash;        id-ref&ndash;&gt;
+        <property name="pointC" ref="cPoint"/>
+        &lt;!&ndash;<property name="pointC" >
+            <idref bean="cPoint"/>
+        </property>&ndash;&gt;
+    </bean>-->
+    <bean id="pointC" class="org.springApp.Point">
         <property name="x" value="0"/>
-        <property name="y" value="0"/>
+        <property name="y" value="20"/>
     </bean>
-    <bean id="cPoint" class="org.springApp.Point">
-        <property name="x" value="20"/>
-        <property name="y" value="0"/>
+    <bean id="pointD" class="org.springApp.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="-20"/>
     </bean>
 
     <alias name="pointTriangle" alias="trianglePoint"/>
+
+    <bean id="square" class="org.springApp.Square">
+        <property name="squarePoints">
+            <list>
+                <ref bean="pointA"/>
+                <ref bean="pointB"/>
+                <ref bean="pointC"/>
+                <ref bean="pointD"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="pointTriangle" class="org.springApp.PointTriangle" autowire="byName">
+
+    </bean>
+
 </beans>

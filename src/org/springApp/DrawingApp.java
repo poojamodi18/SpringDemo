@@ -12,7 +12,7 @@ public class DrawingApp {
         Triangle triangle1 = (Triangle) factory.getBean("triangle");*/
 
         ApplicationContext context = new FileSystemXmlApplicationContext("spring.xml");
-        Triangle triangle= (Triangle) context.getBean("triangle");
+        Triangle triangle = (Triangle) context.getBean("triangle");
         triangle.draw();
 
         PointTriangle pointTriangle = (PointTriangle) context.getBean("pointTriangle");
@@ -20,7 +20,12 @@ public class DrawingApp {
         System.out.println(pointTriangle.getPointB());
         System.out.println(pointTriangle.getPointC());
 
+        //using alias name
         PointTriangle trianglePoint = (PointTriangle) context.getBean("trianglePoint");
-        System.out.println("alias "+pointTriangle.getPointA());
+        System.out.println("alias " + trianglePoint.getPointA());
+
+        System.out.println("\nSquare points");
+        Square square = (Square) context.getBean("square");
+        square.drawSquare();
     }
 }
