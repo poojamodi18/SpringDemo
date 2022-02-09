@@ -20,7 +20,7 @@
 
     <bean id="pointA" class="org.springApp.Point">
         <property name="x" value="${pointA.x}"/>
-        <property name="y" value="0"/>
+        <property name="y" value="${pointA.y}"/>
     </bean>
     <bean id="pointB" class="org.springApp.Point">
         <property name="x" value="20"/>
