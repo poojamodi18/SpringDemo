@@ -7,5 +7,27 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/org-apache-commons-logging.jar/org-apache-commons-logging.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://D:/spring-framework-4.3.9.RELEASE-dist/spring-framework-4.3.9.RELEASE/libs" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://D:/spring-framework-4.3.9.RELEASE-dist/spring-framework-4.3.9.RELEASE/libs" />
+        </SOURCES>
+        <jarDirectory url="file://D:/spring-framework-4.3.9.RELEASE-dist/spring-framework-4.3.9.RELEASE/libs" recursive="false" />
+        <jarDirectory url="file://D:/spring-framework-4.3.9.RELEASE-dist/spring-framework-4.3.9.RELEASE/libs" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>
