@@ -4,8 +4,14 @@ public class Triangle {
     private String type;
     private int height;
 
+    public Triangle(){}
+
     public Triangle(String type) {
         this.type = type;
+    }
+
+    public Triangle(int height) {
+        this.height = height;
     }
 
     public Triangle(String type, int height) {
@@ -30,6 +36,6 @@ public class Triangle {
     }
 
     public void draw() {
-        System.out.println(getType() + " Triangle of height : "+getHeight());
+        System.out.println(getType() + " Triangle of height : " + getHeight());
     }
 }

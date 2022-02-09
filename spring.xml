@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<beans>
+<!--<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"-->
+<!--        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--    post processor bean-->
+    <bean class="org.springApp.MyBeanFactoryPostProcessor"/>
+<!--    property file-->
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations" value="classpath:pointsconfig.properties"/>
+    </bean>
     <bean id="triangle" class="org.springApp.Triangle">
-        <constructor-arg index="0" type="java.lang.String" value="Equilateral"/>
+        <constructor-arg index="0" type="java.lang.String" value="${type}"/>
         <constructor-arg index="1" value="10"/>
     </bean>
 
     <bean id="pointA" class="org.springApp.Point">
-        <property name="x" value="0"/>
+        <property name="x" value="${pointA.x}"/>
         <property name="y" value="0"/>
     </bean>
     <bean id="pointB" class="org.springApp.Point">
@@ -53,8 +64,15 @@
         </property>
     </bean>
 
-    <bean id="pointTriangle" class="org.springApp.PointTriangle" autowire="byName">
+    <bean id="pointTriangle" class="org.springApp.PointTriangle" autowire="byName"/>
 
+    <bean id="parentTriangle" class="org.springApp.Triangle">
+        <property name="height" value="13"/>
+    </bean>
+
+    <bean id="childTriangle" class="org.springApp.Triangle" parent="parentTriangle">
+<!--        <property name="height" value="7"/>-->
+        <property name="type" value="isosceles"/>
     </bean>
 
 </beans>

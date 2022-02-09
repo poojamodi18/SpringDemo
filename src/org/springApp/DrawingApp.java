@@ -27,5 +27,10 @@ public class DrawingApp {
         System.out.println("\nSquare points");
         Square square = (Square) context.getBean("square");
         square.drawSquare();
+
+        Triangle chTriangle = (Triangle) context.getBean("childTriangle");
+        chTriangle.draw();
+
+
     }
 }
