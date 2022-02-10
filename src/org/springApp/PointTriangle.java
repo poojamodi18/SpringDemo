@@ -1,6 +1,6 @@
 package org.springApp;
 
-public class PointTriangle {
+public class PointTriangle implements Shape {
     private Point pointA;
     private Point pointB;
     private Point pointC;
@@ -27,5 +27,10 @@ public class PointTriangle {
 
     public void setPointC(Point pointC) {
         this.pointC = pointC;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Triangle points:\n" + pointA.toString() + " " + pointB.toString() + " " + pointC.toString());
     }
 }

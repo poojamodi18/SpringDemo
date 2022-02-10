@@ -9,19 +9,21 @@
 
     <!--    post processor bean-->
     <bean class="org.springApp.MyBeanFactoryPostProcessor"/>
+    <bean class="import org.springframework.beans.factory.annotation.Autowired"/>
+
 <!--    property file-->
-    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+    <!--<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
         <property name="locations" value="classpath:pointsconfig.properties"/>
     </bean>
     <bean id="triangle" class="org.springApp.Triangle">
         <constructor-arg index="0" type="java.lang.String" value="${type}"/>
         <constructor-arg index="1" value="10"/>
     </bean>
-
-    <bean id="pointA" class="org.springApp.Point">
+-->
+    <!--<bean id="pointA" class="org.springApp.Point">
         <property name="x" value="${pointA.x}"/>
         <property name="y" value="${pointA.y}"/>
-    </bean>
+    </bean>-->
     <bean id="pointB" class="org.springApp.Point">
         <property name="x" value="20"/>
         <property name="y" value="0"/>
@@ -42,7 +44,7 @@
             <idref bean="cPoint"/>
         </property>&ndash;&gt;
     </bean>-->
-    <bean id="pointC" class="org.springApp.Point">
+    <!--<bean id="pointC" class="org.springApp.Point">
         <property name="x" value="0"/>
         <property name="y" value="20"/>
     </bean>
@@ -71,8 +73,12 @@
     </bean>
 
     <bean id="childTriangle" class="org.springApp.Triangle" parent="parentTriangle">
-<!--        <property name="height" value="7"/>-->
+&lt;!&ndash;        <property name="height" value="7"/>&ndash;&gt;
         <property name="type" value="isosceles"/>
+    </bean>-->
+
+    <bean id="circle" class="org.springApp.Circle">
+<!--        <property name="center" ref="pointA"/>-->
     </bean>
 
 </beans>

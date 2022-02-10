@@ -16,9 +16,7 @@ public class DrawingApp {
         triangle.draw();
 
         PointTriangle pointTriangle = (PointTriangle) context.getBean("pointTriangle");
-        System.out.println(pointTriangle.getPointA());
-        System.out.println(pointTriangle.getPointB());
-        System.out.println(pointTriangle.getPointC());
+        pointTriangle.draw();
 
         //using alias name
         PointTriangle trianglePoint = (PointTriangle) context.getBean("trianglePoint");
@@ -30,6 +28,9 @@ public class DrawingApp {
 
         Triangle chTriangle = (Triangle) context.getBean("childTriangle");
         chTriangle.draw();
+
+        System.out.println();
+
 
 
     }
